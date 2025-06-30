@@ -21,9 +21,8 @@ function getHumanChoice () {
 }
 
 function playRound(humanChoice, computerChoice) {
-    // human choice is made all lower case
     humanChoice = humanChoice.toLowerCase()
-
+    
     if (humanChoice == "rock" && computerChoice == "scissors") {
         humanScore += 1;
         return "You win! Rock beats Scissors"; }
