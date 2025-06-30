@@ -3,7 +3,7 @@ console.log("Hello World!!!")
 let humanScore = 0
 let computerScore = 0
 
-function getComputerChoice () {
+function getComputerChoice() {
     let number = Math.floor(Math.random() * 3)
     if (number === 0) {
         return "rock";
@@ -16,13 +16,13 @@ function getComputerChoice () {
     }
 }
 
-function getHumanChoice () {
+function getHumanChoice() {
     return prompt("please enter 'rock' 'paper' or 'scissors'");
 }
 
 function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase()
-    
+
     if (humanChoice == "rock" && computerChoice == "scissors") {
         humanScore += 1;
         return "You win! Rock beats Scissors"; }
@@ -49,3 +49,7 @@ const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 console.log(playRound(humanSelection, computerSelection))
+
+function playGame() {
+
+}
