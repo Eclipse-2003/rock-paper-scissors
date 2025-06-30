@@ -19,5 +19,34 @@ function getComputerChoice () {
 function getHumanChoice () {
     return prompt("please enter 'rock' 'paper' or 'scissors'");
 }
-console.log(getComputerChoice())
-console.log(getHumanChoice())
+
+function playRound(humanChoice, computerChoice) {
+    // human choice is made all lower case
+    humanChoice = humanChoice.toLowerCase()
+
+    if (humanChoice == "rock" && computerChoice == "scissors") {
+        humanScore += 1;
+        return "You win! Rock beats Scissors"; }
+    else if (humanChoice == "rock" && computerChoice == "paper") {
+        computerScore += 1;
+        return "You lose! Paper beats Rock"; }
+    else if (humanChoice == "paper" && computerChoice == "rock") {
+        humanScore += 1;
+        return "You win! Paper beats Rock"; }
+    else if (humanChoice == "paper" && computerChoice == "scissors") {
+        computerScore += 1;
+        return "You lose! Scissors beats Paper"; }
+    else if (humanChoice == "scissors" && computerChoice == "paper") {
+        humanScore += 1;
+        return "You win! Scissors beats Paper"; }
+    else if (humanChoice == "Scissors" && computerChoice == "rock") {
+        computerScore += 1;
+        return "You lose! Rock beats Scissors"; }
+    else {
+        return "Tie! you both entered the same";}
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+console.log(playRound(humanSelection, computerSelection))
