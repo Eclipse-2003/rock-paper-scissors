@@ -1,5 +1,3 @@
-console.log("Hello World!!!")
-
 let humanScore = 0
 let computerScore = 0
 
@@ -45,11 +43,21 @@ function playRound(humanChoice, computerChoice) {
         return "Tie! you both entered the same";}
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-console.log(playRound(humanSelection, computerSelection))
-
 function playGame() {
-
+    for (i = 0; i < 5; i++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        console.log(playRound(humanSelection, computerSelection))
+    }
+    if (humanScore > computerScore) {
+        return console.log("You Won the game! Great job!");
+    }
+    else if (computerScore > humanScore) {
+        return console.log("You Lost the game! Better luck next time!");
+    }
+    else {
+        return console.log("You both Tied the game!");
+    }
 }
+ 
+playGame();
